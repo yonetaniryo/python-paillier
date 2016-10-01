@@ -114,7 +114,7 @@ def encrypt(public, plaintext, output=None):
     log("Encrypting: {:+.16f}".format(num))
     enc = pub.encrypt(num)
     serialised = serialise_encrypted(enc)
-    print(serialised, file=output)
+    # print(serialised, file=output)
 
 
 def serialise_encrypted(enc):
@@ -162,7 +162,7 @@ def decrypt(private, ciphertext, output):
     log("Decrypting ciphertext")
     enc = load_encrypted_number(ciphertext, pub)
     out = private_key.decrypt(enc)
-    print(out, file=output)
+    # print(out, file=output)
 
 
 @cli.command("addenc")
@@ -189,7 +189,7 @@ def add_encrypted(public, encrypted_a, encrypted_b, output):
 
     enc_result = enc_a + enc_b
     serialised_result = serialise_encrypted(enc_result)
-    print(serialised_result, file=output)
+    # print(serialised_result, file=output)
 
 
 @cli.command("add")
@@ -219,7 +219,7 @@ def add_encrypted_to_plaintext(public, encrypted, plaintext, output):
     log("Adding")
     enc_result = enc + num
     serialised_result = serialise_encrypted(enc_result)
-    print(serialised_result, file=output)
+    # print(serialised_result, file=output)
 
 
 @cli.command("multiply")
@@ -250,7 +250,7 @@ def multiply_encrypted_to_plaintext(public, encrypted, plaintext, output):
     enc_result = enc * num
 
     serialised_result = serialise_encrypted(enc_result)
-    print(serialised_result, file=output)
+    # print(serialised_result, file=output)
 
 
 def load_public_key(public_key_data):
